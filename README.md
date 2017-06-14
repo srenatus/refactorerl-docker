@@ -8,14 +8,14 @@ For more information about RefactorErl, please see [its wiki](http://pnyf.inf.el
 
     $ git clone https://github.com/srenatus/refactorerl-docker
     $ cd refactorerl-docker
-		$ docker build -t referl .
+    $ docker build -t referl .
 
 ## Use
 
 To add _your code_ for RefactorErl's inspection capalibilies by adding a `referl_repo.erl` like this:
 
     
-```
+```erlang
 -module(referl_repo).
 
 -export([start/0, load/0]).
@@ -37,4 +37,6 @@ The web UI can be accessed via http://localhost:8001.
 
 Note that further RefactorErl calls can happen in `load/0`, for example executing semantic queries via
 
-    ri:q("mods.funs[loc > 0].mccabe, [{out, "/code/mccabe.out"}])
+```erlang
+ri:q("mods.funs[loc > 0].mccabe, [{out, "/code/mccabe.out"}])
+```
